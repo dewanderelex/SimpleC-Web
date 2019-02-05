@@ -8,13 +8,12 @@ const styles = {
         flexDirection: 'row',
         justifyContent: 'center',
         backgroundColor: '#0d1539',
-        height: 30,
+        height: 50,
         
     },
     navigaiton_text: {
         color: '#ffffff',
         fontSize: 18,
-        
     }
 }
 

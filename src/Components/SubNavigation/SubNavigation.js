@@ -9,28 +9,48 @@ import Week from '../Week/Week';
 import Month from '../Month/Month';
 import Year from '../Year/Year';
 
+
 const styles = {
     SubNavigation_wrapper: {
         display: 'flex',
         height: 50,
         backgroundColor: '#555',
-				justifyContent: 'space-between',
-				alignItems: 'center',
-				paddingLeft: 50,
-				paddingRight: 50,
+		justifyContent: 'space-between',
+		alignItems: 'center',
+		paddingLeft: 50,
+		paddingRight: 50,
     },
     SubNavigationButtonGroup_wrapper: {
         
     },
     SubNavigationInfo_wrapper: {
-			backgroundColor: 'transparent',
-		},
-		button: {
-			margin: 5,
-		},
-		typography: {
-			color: '#fff'
-		}
+		backgroundColor: 'transparent',
+	},
+	button: {
+		borderWidth: 2,
+		color: '#fff',
+		height: 30,
+		width: 40,
+		margin: 10,
+		padding: '0 30px',
+	},
+	buttonActive: {
+		background: 'linear-gradient(45deg, rgba(255,71,15,1) 0%, rgba(242,226,2,1) 100%)',
+		border: 0,
+		borderRadius: 3,
+		color: 'white',
+		height: 30,
+		width: 40,
+		margin: 10,
+		padding: '0 30px',
+	},
+	info_subNavigation: {
+		color: '#fff'
+	},
+	textButton: {
+		fontSize: 10,
+		color: '#fff',
+	}
 }
 
 class SubNavigation extends Component {
@@ -70,45 +90,52 @@ class SubNavigation extends Component {
 						<div>
 								<div className = {classes.SubNavigation_wrapper}>
 									<div className = {classes.SubNavigationButtonGroup_wrapper}>
-										<Button 
-											variant = 'contained'
-											color = 'primary' 
-											className = {classes.button}
-											key = 'day_btn'
+										<Button
+											variant = 'outlined'
+											color = 'secondary'
+											className = {this.state.value === 'day_btn' ? classes.buttonActive : classes.button} 
 											onClick = {this.handleClickDay}
 										> 
-											Day
+											<Typography className = {classes.textButton}>
+												Day
+											</Typography>
 										</Button>
+
 										<Button 
 											variant = 'outlined'
-											color = 'secondary' 
-											className = {classes.button}
-											key = 'week_btn'
+											color = 'secondary'
+											className = {this.state.value === 'week_btn' ? classes.buttonActive : classes.button} 
 											onClick = {this.handleClickWeek}
 										> 
-											Week
+											<Typography className = {classes.textButton}>
+												Week
+											</Typography>
 										</Button>
-										<Button 
+
+										<Button
 											variant = 'outlined'
 											color = 'secondary' 
-											className = {classes.button}
-											key = 'month_btn'
+											className = {this.state.value === 'month_btn' ? classes.buttonActive : classes.button} 
 											onClick = {this.handleClickMonth}
 										> 
-											Month
+											<Typography className = {classes.textButton}>
+												Month
+											</Typography>
 										</Button>
+
 										<Button 
 											variant = 'outlined'
-											color = 'secondary' 
-											className = {classes.button}
-											key = 'year_btn'
+											color = 'secondary'
+											className = {this.state.value === 'year_btn' ? classes.buttonActive : classes.button} 
 											onClick = {this.handleClickYear}
 										> 
-											Year
+											<Typography className = {classes.textButton}>
+												Year
+											</Typography>
 										</Button>
 									</div>
 									<div className = {classes.SubNavigationInfo_wrapper}>
-										<Typography className = {classes.typography}>
+										<Typography className = {classes.info_subNavigation}>
 											Information 
 										</Typography>
 									</div>

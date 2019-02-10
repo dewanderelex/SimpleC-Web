@@ -17,7 +17,7 @@ const styles = theme => ({
     marginTop: 70
   },
   todoList: {
-    width: WIDTH / 3
+    width: WIDTH / 3,
   },
   subNavigation: {
     width: '100%'
@@ -27,7 +27,7 @@ const styles = theme => ({
 class App extends Component {
 
   componentDidMount () {
-    console.log(WIDTH)
+
   }
 
   render() {
@@ -39,10 +39,10 @@ class App extends Component {
         <Navigation />
         <div className = {classes.screen}>
           <div className = {classes.todoList}>
-          <TodoList userToken = "Bearer 1234abcd"/>
+            <TodoList userToken = "Bearer 1234abcd"/>
           </div>
           <div className = {classes.subNavigation}>
-          <SubNavigation />
+            <SubNavigation />
           </div>      
         </div>        
       </div>

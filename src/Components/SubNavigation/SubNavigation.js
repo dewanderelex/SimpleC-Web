@@ -9,19 +9,6 @@ import Week from '../Week/Week';
 import Month from '../Month/Month';
 import Year from '../Year/Year';
 
-function TabContainer(props) {
-  return (
-    <Typography component="div" style={{ padding: 8 * 3 }}>
-      {props.children}
-    </Typography>
-  );
-}
-
-TabContainer.propTypes = {
-  children: propTypes.node.isRequired,
-};
-
-
 const styles = {
     SubNavigation_wrapper: {
         display: 'flex',

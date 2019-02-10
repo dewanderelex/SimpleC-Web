@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Navigation from './Components/Navigation/Navigation';
 import SubNavigation from './Components/SubNavigation/SubNavigation';
-import TodoList from './Views/TodoList/TodoList';
+import TodoList from './Components/TodoList/TodoList';
 
-import { withStyles } from '@material-ui/core/styles'
+import { withStyles } from '@material-ui/core/styles';
 
 const WIDTH = window.innerWidth;
 
@@ -39,7 +39,7 @@ class App extends Component {
         <Navigation />
         <div className = {classes.screen}>
           <div className = {classes.todoList}>
-          <TodoList />
+          <TodoList userToken = "Bearer 1234abcd"/>
           </div>
           <div className = {classes.subNavigation}>
           <SubNavigation />

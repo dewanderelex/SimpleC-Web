@@ -12,7 +12,13 @@ import CommentIcon from '@material-ui/icons/Comment';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 
+import axios from 'axios';
+
 import { Data } from '../../assets/FakeData/Data';
+
+const FINALURL = 'https://simplec.herokuapp.com/api/todos/';
+
+const TEMPAUTH = 'Bearer 1234abcd';
 
 const styles = theme => ({
 	TodoList_wrapper: {
@@ -25,16 +31,33 @@ const styles = theme => ({
 
 class TodoList extends Component {
 	
-	constructor ({props}) {
-		super({props});
+	constructor (props) {
+		super(props);
+		// const { userToken } = props;
 		this.state = {
 			checked: [0],
+			// token: userToken,
 		}
 		this.handleToggle = this.handleToggle.bind(this);
 	}
 
 	componentDidMount() {
+
+		const { userToken } = this.props;
+		this.setState ({userToken});
+		console.log(this.state.userToken);
 		// TODO: API Configuration
+		this.getAllToDo (TEMPAUTH); 
+	}
+
+	getAllToDo = (token) => {
+		const instance = {
+			headers: {
+				'Authorization': token,
+				'Content-Type': 'application/json',
+			},
+		};
+		axios.get(FINALURL, instance).then((response) => {console.log(response)});
 	}
 
   handleToggle = value => () => {
